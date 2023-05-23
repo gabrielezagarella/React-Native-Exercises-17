@@ -20,10 +20,10 @@ const Card: React.FC<Props> = ({ item }) => {
   };
 
   return (
-    <View style={{ flexDirection: "row" }}>
+    <View style={{ flexDirection: "row", margin: 10 }}>
       <Image
         source={{ uri: item.picture.large }}
-        style={{ height: 100, width: 100, borderRadius: 30 }}
+        style={{ height: 100, width: 100, borderRadius: 30, marginRight: 10 }}
       />
       <View>
         <Text>{item.name.first}</Text>
@@ -55,7 +55,9 @@ const Card: React.FC<Props> = ({ item }) => {
           onPress={() => handlePress(`https://www.google.com`)}
           activeOpacity={0.6}
         >
-          <Text style={{ textDecorationLine: "underline" }}>Open url google</Text>
+          <Text style={{ textDecorationLine: "underline" }}>
+            Open url google
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

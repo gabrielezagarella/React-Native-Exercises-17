@@ -15,7 +15,6 @@ const ListItem: React.FC = () => {
           "https://randomuser.me/api/?results=20&nat=us,fr,gb&exc=login,registered&noinfo"
         );
         const res: Contact = await getContact.json();
-        // console.log('res', res.results);
         setContact(res.results);
       } catch (error) {
         console.log("ERROR", error);
@@ -41,7 +40,6 @@ const ListItem: React.FC = () => {
     <View
       style={{
         flex: 1,
-        marginTop: 140,
         alignItems: "center",
         justifyContent: "center",
       }}
@@ -52,14 +50,15 @@ const ListItem: React.FC = () => {
       <Button title="Choice photo" color="blue" onPress={pickImage} />
       <FlatList
         data={contact}
-        style={{ width: "100%" }}
-        // contentContainerStyle={{
-        //   width: "100%",
-        //   backgroundColor: "red",
-        // }}
+        style={{ width: "100%",      
+               marginBottom: 50,
+      }}
+      showsVerticalScrollIndicator={false}
+
         renderItem={({ item }) => {
           return <Card item={item} />;
         }}
+      keyExtractor={(contact)=>contact.id.value}
       />
     </View>
   );

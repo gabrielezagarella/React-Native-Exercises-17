@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import ListItem from "./src/components/ListItem/ListItem";
 
 const App = () => {
   return (
     <View style={styles.container}>
+      <SafeAreaView/>
       <StatusBar style="auto" />
       <ListItem/>
     </View>
@@ -15,12 +16,9 @@ export default App;
 
 const styles = StyleSheet.create({
   container: {
-    // alignItems: "center",
-    // flexDirection: "row",
-    // justifyContent: "space-between",
     flex: 1,
-    backgroundColor: "#fff",
-    margin: 20,
+    backgroundColor: "#BCA5AE",
+    padding: 20,
   },
   centainerBoxCenter: {
     justifyContent: "center",

@@ -1,35 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
+import ListItem from "./src/components/ListItem/ListItem";
 
-export default function App() {
+const App = () => {
   return (
-    // Esempio 1
-    // <View style={styles.container}>
-    //   {/* <Text>Open up App.tsx to start working on your app!</Text> */}
-    //   <View style={styles.box} />
-    //   <View style={styles.box} />
-    //   <View style={styles.box} />
-    //   <StatusBar style="auto" />
-    // </View>
-    // Esempio 2
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.containerBoxTop}>
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-      </View>
-      <View style={styles.centainerBoxCenter}>
-        <View style={styles.box} />
-        <View style={styles.box} />
-        <View style={styles.box} />
-      </View>
-      <View style={{ alignSelf: "flex-end" }}>
-        <View style={styles.box} />
-      </View>
+      <ListItem/>
     </View>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {

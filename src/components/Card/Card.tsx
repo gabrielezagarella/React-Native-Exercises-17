@@ -1,15 +1,24 @@
 import React from "react";
 import { View, Image, Text, TouchableOpacity, Linking } from "react-native";
-import { Result } from "../../models/Contact/Contact";
+import { Profile } from "../../models/Contact";
+import RootStackParams from "../../models/RootStackParams";
+import { StackNavigationProp } from "@react-navigation/stack";
+import {
+  useNavigation,
+} from "@react-navigation/native";
+import ROUTES from "../../navigation/routes";
 
-type Props = Record<"item", Result>;
+type Props = Record<"item", Profile>;
 
 interface Prop {
-  item: Result;
+  item: Profile;
   name: string;
 }
 
 const Card: React.FC<Props> = ({ item }) => {
+  const { navigate } =
+  useNavigation<StackNavigationProp<RootStackParams, ROUTES>>();
+
   const handlePress = async (url: string) => {
     if (url) {
       const supported = await Linking.canOpenURL(url);
@@ -20,7 +29,10 @@ const Card: React.FC<Props> = ({ item }) => {
   };
 
   return (
-    <View style={{ flexDirection: "row", margin: 10 }}>
+    <TouchableOpacity
+      style={{ flexDirection: "row", margin: 10 }}
+      onPress={() => navigate("Detail", { item, name: "Gabriele" })}
+    >
       <Image
         source={{ uri: item.picture.large }}
         style={{ height: 100, width: 100, borderRadius: 30, marginRight: 10 }}
@@ -60,7 +72,7 @@ const Card: React.FC<Props> = ({ item }) => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -1,8 +1,8 @@
 export interface Contact {
-  results: Result[];
+  results: Profile[];
 }
 
-export interface Result {
+export interface Profile {
   gender:   string;
   name:     Name;
   location: Location;

@@ -9,7 +9,6 @@ const SettingScreen: CustomScreenFC<"Setting"> = ({ navigation }) => {
   return (
     <View>
       <Text>Sono in SettingScreen</Text>
-      <Button title="Go to Home" onPress={() => navigation.popToTop()} />
     </View>
   );
 };

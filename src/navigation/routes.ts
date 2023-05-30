@@ -3,6 +3,7 @@ enum ROUTES {
   Detail = "Detail",
   Setting = "Setting",
   DrawerMenu = "DrawerMenu",
+  HomeStack = "HomeStack",
 }
 
 export default ROUTES;

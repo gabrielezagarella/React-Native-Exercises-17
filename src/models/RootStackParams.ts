@@ -7,6 +7,8 @@ type RootStackParams = {
     name?: string,
   };
   Setting: undefined;
+  HomeStack: undefined;
+  DrawerMenu: undefined;
 };
 
 export default RootStackParams;

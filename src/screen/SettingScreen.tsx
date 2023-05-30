@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-import ScreenFC from "../models/ScreenFC";
+import ScreenFC, { CustomScreenFC } from "../models/ScreenFC";
 
 type A = "Home" | "Setting" | "Detail";
 const test: A = "Setting";
 
-const SettingScreen: ScreenFC<"Setting"> = ({ navigation }) => {
+const SettingScreen: CustomScreenFC<"Setting"> = ({ navigation }) => {
   return (
     <View>
       <Text>Sono in SettingScreen</Text>

@@ -12,6 +12,10 @@ const HomeScreen: ScreenFC<"Home"> = ({ navigation, route }) => {
   useFocusEffect(()=>{
     console.log('focus');
   })
+
+  useEffect(()=>{
+    console.log('focus');
+  },[])
   
   useEffect(() => {
     (async () => {

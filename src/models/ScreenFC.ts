@@ -10,4 +10,11 @@ type ScreenNavigationProps<T extends keyof RootStackParams> = {
 type ScreenFC<S extends keyof RootStackParams> = React.FC<
   ScreenNavigationProps<S>
 >;
+
+type CustomScreenProps<T extends keyof RootStackParams> = {
+  navigation: StackNavigationProp<RootStackParams, ROUTES>;
+};
+export type CustomScreenFC<S extends keyof RootStackParams> = React.FC<
+  CustomScreenProps<S>
+>;
 export default ScreenFC;

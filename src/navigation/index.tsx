@@ -19,6 +19,7 @@ import { Alert, ScrollViewProps } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import FavoriteScreen from "../screen/FavoriteScreen";
 
 const RootStack = createStackNavigator<RootStackParams>();
 const Drawer = createDrawerNavigator();
@@ -76,6 +77,7 @@ const DrawerMenu = () => {
       }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
+      <Drawer.Screen name={ROUTES.Favorite} component={FavoriteScreen} />
       <Drawer.Screen name={ROUTES.Setting} component={SettingScreen} />
     </Drawer.Navigator>
   );
@@ -114,7 +116,7 @@ const TabNavigation: React.FC = () => {
         component={DrawerMenu}
         options={{
           headerShown: false,
-          tabBarLabel: ROUTES.Setting,
+          tabBarLabel: ROUTES.Favorite,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),

@@ -6,6 +6,7 @@ import Card from "../Card/Card";
 type Props = Record<"contact", Array<Profile>>;
 
 const ListItem: React.FC<Props> = ({ contact }) => {
+  
   return (
     <View
       style={{

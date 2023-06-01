@@ -9,14 +9,14 @@ import { useFocusEffect } from "@react-navigation/native";
 const HomeScreen: ScreenFC<"Home"> = ({ navigation, route }) => {
   const [contact, setContact] = useState<Array<Profile>>();
 
-  useFocusEffect(()=>{
-    console.log('focus');
-  })
+  useFocusEffect(() => {
+    console.log("focus");
+  });
 
-  useEffect(()=>{
-    console.log('focus');
-  },[])
-  
+  useEffect(() => {
+    console.log("focus");
+  }, []);
+
   useEffect(() => {
     (async () => {
       try {
@@ -35,9 +35,7 @@ const HomeScreen: ScreenFC<"Home"> = ({ navigation, route }) => {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <SafeAreaView />
-      <ListItem
-        contact={contact || []}
-      />
+      <ListItem contact={contact || []} />
     </View>
   );
 };

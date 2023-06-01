@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Image, Text, TouchableOpacity, Linking } from "react-native";
 import { Profile } from "../../models/Contact";
 import RootStackParams from "../../models/RootStackParams";
 import { StackNavigationProp } from "@react-navigation/stack";
-import {
-  useNavigation,
-} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import ROUTES from "../../navigation/routes";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  BookmarkProps,
+  addBookmark,
+  removeBookmark,
+} from "../../redux/actions/bookmarkActions";
 
 type Props = Record<"item", Profile>;
 
@@ -17,7 +22,21 @@ interface Prop {
 
 const Card: React.FC<Props> = ({ item }) => {
   const { navigate } =
-  useNavigation<StackNavigationProp<RootStackParams, ROUTES>>();
+    useNavigation<StackNavigationProp<RootStackParams, ROUTES>>();
+  const dispach = useDispatch();
+
+  const { bookmarks } = useSelector(
+    (state: { bookmarkReducer: BookmarkProps }) => state.bookmarkReducer
+  );
+
+  useEffect(() => {
+    const getContact = bookmarks.some(
+      (item) => item.id.value === item.id.value
+    );
+    getContact && setSave(true);
+  }, []);
+
+  const [save, setSave] = useState(false);
 
   const handlePress = async (url: string) => {
     if (url) {
@@ -72,6 +91,19 @@ const Card: React.FC<Props> = ({ item }) => {
           </Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        onPress={() => {
+          setSave(!save),
+            save
+              ? dispach(removeBookmark(item.id.value))
+              : dispach(addBookmark(item));
+        }}
+      >
+        <MaterialCommunityIcons
+          name={save ? "cards-heart" : "heart-outline"}
+          size={20}
+        />
+      </TouchableOpacity>
     </TouchableOpacity>
   );
 };

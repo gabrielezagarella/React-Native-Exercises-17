@@ -4,6 +4,7 @@ enum ROUTES {
   Setting = "Setting",
   DrawerMenu = "DrawerMenu",
   HomeStack = "HomeStack",
+  Favorite = "Favorite",
 }
 
 export default ROUTES;

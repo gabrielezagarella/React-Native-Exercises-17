@@ -9,6 +9,7 @@ type RootStackParams = {
   Setting: undefined;
   HomeStack: undefined;
   DrawerMenu: undefined;
+  Favorite: undefined;
 };
 
 export default RootStackParams;

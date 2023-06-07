@@ -67,6 +67,7 @@ const CustomDrawerContent = (
 const DrawerMenu = () => {
   return (
     <Drawer.Navigator
+    initialRouteName={ROUTES.Setting}
       screenOptions={{
         headerTintColor: "#820251",
         headerStyle: { backgroundColor: "#9D5E7B" },
@@ -89,7 +90,7 @@ const TabNavigation: React.FC = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName={ROUTES.HomeStack}
+      initialRouteName={ROUTES.DrawerMenu}
       screenOptions={{
         tabBarActiveTintColor: "#820251",
         tabBarInactiveTintColor: "gray",
@@ -129,7 +130,7 @@ const TabNavigation: React.FC = () => {
 const NavigatorContainer = () => {
   return (
     <NavigationContainer
-      onStateChange={(navigation) => console.log(navigation)}
+      // onStateChange={(navigation) => console.log(navigation)}
     >
       <TabNavigation />
     </NavigationContainer>

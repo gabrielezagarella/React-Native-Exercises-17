@@ -33,6 +33,15 @@ import {Text} from 'react-native';
 // npm i redux-persist @react-native-async-storage/async-storage
 // https://blog.logrocket.com/use-redux-persist-react-native/
 
+// git checkout feature/hook
+// npm install -g eas-cli
+// eas login
+// eas build --platform android 
+// (format .aab)
+// eas build --profile production --platform android 
+// (format .apk)
+// Remove key extra into app.json
+
 const App = () => {
   return (
     <Provider store={store}>
